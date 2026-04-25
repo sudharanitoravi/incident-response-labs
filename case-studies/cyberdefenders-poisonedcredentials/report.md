@@ -52,7 +52,7 @@ and requires no special privileges — just network access.
 ## Screenshots & Analysis
 
 ### 01 — LLMNR Queries from Victim Machine
-![LLMNR queries](screenshots/01-POISONED.png)
+![LLMNR queries](screenshots/1-Poisoned-credentials.png)
 *Filter applied: `llmnr and ip.src == 192.168.232.162`*
 
 *Victim machine (192.168.232.162) is broadcasting LLMNR queries 
@@ -92,7 +92,7 @@ waits for.*
 ---
 
 ### 02 — LLMNR Poisoning Response
-![LLMNR poisoning](screenshots/02-POISONED.png)
+![LLMNR poisoning](screenshots/2-Poisoned-credentials.png)
 *Filter applied: `llmnr`*
 
 *This screenshot shows the full LLMNR conversation including 
@@ -127,7 +127,7 @@ is systematically responding to ALL LLMNR queries on the network.*
 ---
 
 ### 03 — Packet 171 Detail — Poisoned Response
-![Packet detail](screenshots/03-POISONED.png)
+![Packet detail](screenshots/3-Poisoned-credentials.png)
 *Detailed view of Packet 171 — the LLMNR poisoned response 
 from attacker to victim for the "prinetr" hostname query.*
 
@@ -159,7 +159,7 @@ verify the response is malicious.*
 ---
 
 ### 04 — SMB2 NTLM Authentication Capture
-![SMB authentication](screenshots/04-POISONED.png)
+![SMB authentication](screenshots/4-Poisoned-credentials.png)
 *Filter applied: `tcp.stream eq 11`*
 
 *After the victim believed the attacker's poisoned LLMNR response, 
@@ -194,7 +194,7 @@ they got what they needed and dropped the session.
 ---
 
 ### 05 — NTLMSSP Challenge Details
-![NTLMSSP challenge](screenshots/05-POISONED.png)
+![NTLMSSP challenge](screenshots/5-Poisoned-credentials.png)
 *Filter applied: `ip.dst == 192.168.215 and smb2`*
 
 *Detailed view of the NTLMSSP Challenge packet (241) revealing 
